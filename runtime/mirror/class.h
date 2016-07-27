@@ -479,7 +479,7 @@ class MANAGED Class FINAL : public Object {
 
   template<ReadBarrierOption kReadBarrierOption = kWithReadBarrier>
   size_t GetComponentSize() SHARED_REQUIRES(Locks::mutator_lock_) {
-    return 1U << GetComponentSizeShift();
+    return 1U << GetComponentSizeShift<kReadBarrierOption>();
   }
 
   template<ReadBarrierOption kReadBarrierOption = kWithReadBarrier>
